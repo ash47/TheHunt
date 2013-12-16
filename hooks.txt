@@ -1,0 +1,28 @@
+RoundSetup()
+    - Called when the round is being setup
+
+RoundStart()
+    - Called when the round starts, this is where you should build hitlists
+
+RoundOver()
+    - When a round finishes
+
+RDMHurt(target, dmginfo)
+    - Called when a player attacks another player and it's considered RDM, you should be able to modify dmginfo here, and for example, remove RDM damage
+    - target is who was attacked
+    - you can get the attacker using dmginfo:GetAttacker()
+
+RDMKill(ply, wep, killer)
+    - When a player has been killed randomly (Random Death Match)
+    - ply is the player who was killed
+    - wep is probably the weapon they used to kill them (if there is one)
+    - killer is the player who RDMed
+
+HitComplete(ply, wep, killer)
+    - When a player completes a hit against another player
+    - The player's target will already be removed by this stage
+
+HitFailed(ply)
+    - If a hit is failed
+    - Hits fail if a player leaves the server
+    - ply is the hitman himself, not the target
